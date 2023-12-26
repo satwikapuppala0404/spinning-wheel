@@ -19,6 +19,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s ease-in-out;
+  animation: rotate 4s linear infinite; /* Continuous rotation */
 }
 
 .segment {
@@ -35,5 +36,14 @@ body {
 .green { background-color: green; transform: rotateY(270deg); }
 
 .wheel:hover {
-  transform: rotateY(360deg);
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
