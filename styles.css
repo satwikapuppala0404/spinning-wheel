@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.wheel-container {
+  width: 200px;
+  height: 200px;
+  perspective: 600px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+.segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+}
+
+.yellow { background-color: yellow; transform: rotateY(0deg); }
+.blue { background-color: blue; transform: rotateY(90deg); }
+.red { background-color: red; transform: rotateY(180deg); }
+.green { background-color: green; transform: rotateY(270deg); }
+
+.wheel:hover {
+  transform: rotateY(360deg);
+}
